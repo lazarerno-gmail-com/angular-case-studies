@@ -1,0 +1,16 @@
+
+<div>
+    <label for="country">Country:</label>  
+    <select #countryControl name="country" class="form-control" (change)="changeCountry(countryControl.value)"> 
+        <option>Select Country</option>  
+        <option *ngFor="let country of countryList" value="{{country.code}}">{{country.name}}</option>  
+    </select>
+</div>
+<div>
+    <label for="country">Phone number:</label>
+    <input type="text" class="form-control" [(ngModel)]="enteredPhoneNumber" (ngModelChange)="onPhoneNumberChanged()" placeholder="{{placeholder}}">
+</div>
+<div *ngIf="errorMessage" style="color: red;">{{errorMessage}}</div>
+<div>
+    <button type="button" (click)="onValidatePhoneNumber()">Validate</button>
+</div>
