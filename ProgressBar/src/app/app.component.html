@@ -1,0 +1,26 @@
+
+
+<div class="control-container">
+    <div>First sample:</div>
+    <app-progress-bar-control [currentValue]="5" [maxValue]="12"></app-progress-bar-control>
+</div>
+
+<div class="control-container">
+    <div>Show value = TRUE:</div>
+    <app-progress-bar-control [showValue]="true" [currentValue]="5" [maxValue]="12"></app-progress-bar-control>
+</div>
+
+<div class="control-container">
+    <div>Show value = FALSE:</div>
+    <app-progress-bar-control [showValue]="false" [currentValue]="5" [maxValue]="12"></app-progress-bar-control>
+</div>
+
+<div class="control-container">
+    <div>Value Type = PERCENTAGE</div>
+    <app-progress-bar-control [valueType]="0" [currentValue]="21" [maxValue]="33" [tooltip]="percentageStr"></app-progress-bar-control>
+</div>
+
+<div class="control-container">
+    <div>Value Type = RATIO</div>
+    <app-progress-bar-control [valueType]="1" [currentValue]="13" [maxValue]="0" [tooltip]="'Max is zero'"></app-progress-bar-control>
+</div>
