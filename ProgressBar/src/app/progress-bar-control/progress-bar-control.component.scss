@@ -1,0 +1,36 @@
+
+:host {
+  --pr-bar-color: var(--primary);
+  --pr-bar-background: var(--secondary);
+  
+  position: relative;
+  width: 100%;
+  height: var(--pr-bar-height);
+
+  mat-progress-bar {
+    width: 100%;
+  }
+
+  .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    background-color: var(--pr-bar-background);
+    color: var(--pr-bar-color);
+    padding: 0 4px 0 4px;
+  }
+
+  .mat-mdc-progress-bar {
+       --mdc-linear-progress-track-height: var(--pr-bar-height);
+       --mdc-linear-progress-active-indicator-height: var(--pr-bar-height);
+       --mdc-linear-progress-active-indicator-color: var(--pr-bar-color);
+       --mdc-linear-progress-track-color: var(--pr-bar-background);
+       
+       border-top-right-radius: 5% var(--pr-bar-height);
+       border-bottom-right-radius: 5% var(--pr-bar-height);
+       border-top-left-radius: 5% var(--pr-bar-height);
+       border-bottom-left-radius: 5% var(--pr-bar-height);
+  }
+}

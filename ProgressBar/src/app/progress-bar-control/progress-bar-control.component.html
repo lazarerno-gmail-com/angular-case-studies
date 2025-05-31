@@ -1,15 +1,19 @@
-<div class="progress-container" title="{{tooltip}}">
-    <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
-    @if(showValue)
-    {
-        @if(valueType === 0)
+<div title="{{tooltip}}"
+    [style.--pr-bar-height]="progressBarHeight"
+    [style.--pr-bar-color]="progressColor"
+    [style.--pr-bar-background]="progressBackgroundColor"
+    >
+        <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+        @if(showValue)
         {
-            <div class="progress-text">{{ progress }}%</div>
+            @if(valueType === 0)
+            {
+                <div class="progress-text">{{ progress }}%</div>
+            }
+            @else {
+                <div class="progress-text">{{value}} / {{max}}</div>
+            }       
         }
-        @else {
-            <div class="progress-text">{{value}} / {{max}}</div>
-        }       
-    }
 </div>
 
     

@@ -9,7 +9,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
       MatProgressBarModule
     ],
   templateUrl: './progress-bar-control.component.html',
-  styleUrl: './progress-bar-control.component.css'
+  styleUrl: './progress-bar-control.component.scss'
 })
 export class ProgressBarControlComponent {
   @Input() tooltip: string = "";
@@ -23,7 +23,19 @@ export class ProgressBarControlComponent {
     this.value = currentValue;
     this.calculateProgress();
   }
-
+  @Input() set height(height: string) {
+    this.progressBarHeight = height;
+  }
+  @Input() set color(color: string) {
+    this.progressColor = color;
+  }
+  @Input() set backgroundColor(backgroundColor: string) {
+    this.progressBackgroundColor = backgroundColor;
+  }
+  
+  progressBarHeight = "24px";
+  progressColor = "";
+  progressBackgroundColor = "";
   progress = 0;
   value = 0;
   max = 0;
